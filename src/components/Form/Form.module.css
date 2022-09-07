@@ -1,5 +1,18 @@
 .form{
    display: flex;
    flex-direction: column;
-   width: 50vw;
+   width: 35vw;
+}
+
+.form label{
+   text-align: left;
+   margin-bottom: 15px;
+}
+
+.form input{
+   margin-bottom: 15px;
+}
+
+.form button{
+   margin-top: 15px;
 }

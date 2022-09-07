@@ -10,7 +10,7 @@ function Form(){
          <Input  type='text'/>
          <label>Age (Years)</label>
          <Input  type='number'/>
-         <Button>Submit</Button>
+         <Button>Add user</Button>
       </form>
    )
 }
