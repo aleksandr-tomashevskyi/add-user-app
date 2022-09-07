@@ -1,13 +1,15 @@
 import styles from './Form.module.css';
-import Button from './Button'
+import Button from './Button';
+import Input from './Input';
 
 function Form(){
+   
    return (
       <form className={styles.form}>
          <label>Username</label>
-         <input type='text'></input>
+         <Input  type='text'/>
          <label>Age (Years)</label>
-         <input type='number'></input>
+         <Input  type='number'/>
          <Button>Submit</Button>
       </form>
    )

@@ -3,7 +3,7 @@ import Form from './Form/Form'
 
 function FormBlock(){
    return (
-      <Card>
+      <Card>    
          <Form />
       </Card>
    )
