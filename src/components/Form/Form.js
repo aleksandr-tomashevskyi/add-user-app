@@ -3,10 +3,21 @@ import styles from './Form.module.css';
 import Button from './Button';
 import Input from './Input';
 
-function Form(){
+function Form(props){
    function submitHandler(event){
       event.preventDefault();
+      const userInfo = {
+         name: userName,
+         age: userAge
+      };
+      props.onSaveEntry(userInfo); // passing data to higher component
+
+      setUserName(''); //resetting input field after submit
+      setUserAge('');//resetting input field after submit
+
    }
+
+
    const [userName, setUserName] = useState('');
    
    function userNameChangeHandler(event){
