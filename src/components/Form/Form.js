@@ -7,6 +7,7 @@ function Form(props){
    function submitHandler(event){
       event.preventDefault();
       const userInfo = {
+         id: new Date(),
          name: userName,
          age: userAge
       };

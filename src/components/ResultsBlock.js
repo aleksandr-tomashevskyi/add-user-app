@@ -15,7 +15,7 @@ function ResultsBlock(props) {
     <Card>
       <div className={styles["results-block-content"]}>
         {dataIsPresent && props.addEntryData.map((person)=>(
-          <UserItem userName = {person.name} userAge = {person.age}></UserItem>
+          <UserItem key={person.id} userName = {person.name} userAge = {person.age}></UserItem>
         ))}
         
       </div>
