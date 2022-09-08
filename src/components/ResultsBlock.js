@@ -1,13 +1,23 @@
 import Card from "./UI/Card";
-import ResultEntry from "./Results/ResultEntry";
+import UserItem from "./Results/UserItem";
 import styles from "./ResultsBlock.module.css";
 
-function ResultsBlock() {
+function ResultsBlock(props) {
+  // console.log(props.addEntryData)
+  let dataIsPresent = false;
+  if(props.addEntryData){
+    dataIsPresent = true;
+  }
+
+
   return (
    <div className={styles["results-block-wrapper"]}>
     <Card>
       <div className={styles["results-block-content"]}>
-        <ResultEntry>Test</ResultEntry>
+        {dataIsPresent && props.addEntryData.map((person)=>(
+          <UserItem userName = {person.name} userAge = {person.age}></UserItem>
+        ))}
+        
       </div>
     </Card>
     </div>

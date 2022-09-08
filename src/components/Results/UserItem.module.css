@@ -1,0 +1,10 @@
+.user-item{
+   text-align: left;
+   border: solid 1px grey;
+   padding: 10px;
+   margin-bottom: 15px;
+}
+
+.user-item:last-child{
+   margin: 0;
+}

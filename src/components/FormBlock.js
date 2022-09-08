@@ -2,10 +2,10 @@ import Card from "./UI/Card";
 import Form from "./Form/Form";
 import styles from './FormBlock.module.css';
 
-function FormBlock() {
+function FormBlock(props) {
 
   function saveEntry(newEntryData){
-    console.log(newEntryData)
+    props.onSaveEntry(newEntryData)
   }
 
   return (
