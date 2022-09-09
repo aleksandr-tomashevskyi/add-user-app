@@ -3,7 +3,6 @@ import styles from './PopupOverlay.module.css';
 
 function PopupOverlay(props){
    function closeSequence(event){
-      console.log(event.target.getAttribute('data-item-id'))
       if(event.target.getAttribute('data-item-id') === 'popup-window__closing-ribbon'){
          props.popupTrigger();
       }
