@@ -11,26 +11,41 @@ function App() {
   const [validationResults, setValidationResults] = useState('');
 
   function saveEntryHandler(newData) {
-    if(checkEntryValidity(newData)){
+    const validationResult = checkEntryValidity(newData);
+    if(!validationResult){
       setUserData((prevData) => {
         return [newData, ...prevData];
       });
     } else{
-      setValidationResults('Sorry, empty strings are not allowed');
+      setValidationResults(validationResult); // returns string with error message
     }
   }
 
   function closePopup(){
-    setValidity(!isValid);
+    setValidity(!isValid); //needed to close popup
+  }
+
+  function checkIfNum(data){
+    return /\d/.test(data.name);
+  }
+
+  function symbolsFilter(data){
+    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    console.log(data.name);
+    console.log(specialChars.test(data.name));
+    return specialChars.test(data.name);
   }
 
 
   function checkEntryValidity(newData) {
-    if(!newData.name || !newData.age){
-      setValidity(!isValid);
-      return false;
-    } else{
-      return true;
+    if(!newData.name || !newData.age){ // check for empty string
+      setValidity(!isValid); // needed to open popup, isValid is then transferred down thru popupTrigger
+      return 'Sorry, empty strings are not allowed';
+    } else if(symbolsFilter(newData) || checkIfNum(newData)){ // check for spec chars or numeric values
+      setValidity(!isValid); // needed to open popup, isValid is then transferred down thru popupTrigger
+      return 'Please, enter only alphabetic symbols';
+    }else{
+      return '';
     }
   }
 
