@@ -3,7 +3,7 @@ import styles from './PopupOverlay.module.css';
 
 function PopupOverlay(props){
    function closeSequence(event){
-      if(event.target.getAttribute('data-item-id') === 'popup-window__closing-ribbon'){
+      if(!event.target.closest('.popup-window__body')){
          props.popupTrigger();
       }
    }
@@ -15,11 +15,9 @@ function PopupOverlay(props){
             <path className={styles['popup-window__closing-icon-inner']} d="M21 1L1 21M21 21L1 1L21 21Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
          </div>
-         <div className={styles['popup-window__body']}>
-            <div className={styles['popup-window__content']}>
+            <div className={`${styles['popup-window__body']} popup-window__body`}>
                {props.children}
             </div>
-         </div>
       </div>
 </section>
 
