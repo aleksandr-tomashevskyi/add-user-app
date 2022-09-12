@@ -20,7 +20,7 @@
 .popup-window__closing-icon{
    cursor: pointer;
 }
-.popup-window__closing-icon:hover.popup-window__closing-icon-inner{
+.popup-window__closing-icon:hover .popup-window__closing-icon-inner{
    stroke: #D5D5D5;
 }
 
