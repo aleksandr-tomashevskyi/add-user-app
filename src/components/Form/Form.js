@@ -33,11 +33,11 @@ function Form(props){
 
    return (
       <form onSubmit={submitHandler} className={styles.form}>
-         <label>Username</label>
-         <Input value={userName} onChange={userNameChangeHandler} type='text'/>
+         <label htmlFor=''>Username</label>
+         <Input elementId={'username'} value={userName} onChange={userNameChangeHandler} type='text'/>
          <label>Age (Years)</label>
-         <Input value={userAge} onChange={userAgeChangeHandler} type='number'/>
-         <Button>Add user</Button>
+         <Input elementId={'userage'} value={userAge} onChange={userAgeChangeHandler} type='number'/>
+         <Button elementType='submit'>Add user</Button>
       </form>
    )
 }
